@@ -1,0 +1,11 @@
+﻿  Creating makefile for hot reloading DungeonCrawlerEditor (ini files are newer that UBTMakefile)
+  Compiling game modules for hot reload
+  Parsing headers for DungeonCrawlerEditor
+    Running UnrealHeaderTool "C:\Users\danny\Documents\Unreal Projects\New folder\DungeonCrawler\DungeonCrawler.uproject" "C:\Users\danny\Documents\Unreal Projects\New folder\DungeonCrawler\Intermediate\Build\Win64\DungeonCrawlerEditor\Development\DungeonCrawlerEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for DungeonCrawlerEditor in 5.5092693 seconds
+  Performing 3 actions (4 in parallel)
+  DungeonCrawler.generated.cpp
+  DoorControl.cpp
+  [3/3] Link UE4Editor-DungeonCrawler-5753.dll
+     Creating library C:\Users\danny\Documents\Unreal Projects\New folder\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DungeonCrawler-5753.lib and object C:\Users\danny\Documents\Unreal Projects\New folder\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DungeonCrawler-5753.exp
+  Total build time: 20.78 seconds

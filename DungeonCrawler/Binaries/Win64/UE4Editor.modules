@@ -1,0 +1,9 @@
+{
+	"Changelist" : 3249277,
+	"CompatibleChangelist" : 3195953,
+	"BuildId" : "4f6d5531-fd46-4355-8c7a-0df00308fec8",
+	"Modules" : 
+	{
+		"DungeonCrawler" : "UE4Editor-DungeonCrawler-5753.dll"
+	}
+}
