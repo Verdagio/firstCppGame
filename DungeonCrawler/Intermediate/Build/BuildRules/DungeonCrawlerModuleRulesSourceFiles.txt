@@ -1,0 +1,3 @@
+C:\Users\danny\Documents\Unreal Projects\02_DungeonCrawl\DungeonCrawler\Source\DungeonCrawler\DungeonCrawler.Build.cs
+C:\Users\danny\Documents\Unreal Projects\02_DungeonCrawl\DungeonCrawler\Source\DungeonCrawler.Target.cs
+C:\Users\danny\Documents\Unreal Projects\02_DungeonCrawl\DungeonCrawler\Source\DungeonCrawlerEditor.Target.cs

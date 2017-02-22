@@ -1,0 +1,6 @@
+﻿  Compiling game modules for hot reload
+  Performing 2 actions (4 in parallel)
+  BaseCharacter.cpp
+  [2/2] Link UE4Editor-DungeonCrawler-3924.dll
+     Creating library C:\Users\danny\Documents\Unreal Projects\02_DungeonCrawl\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DungeonCrawler-3924.lib and object C:\Users\danny\Documents\Unreal Projects\02_DungeonCrawl\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DungeonCrawler-3924.exp
+  Total build time: 6.29 seconds
