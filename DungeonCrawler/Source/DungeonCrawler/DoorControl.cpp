@@ -20,19 +20,25 @@ void UDoorControl::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//the following will make the character a trigger
-	
-	TheTrigger = GetWorld()->GetFirstPlayerController()->GetPawn();
+
+	Owner = GetOwner();														//This will set the owner to the door for manipulation
+	TheTrigger = GetWorld()->GetFirstPlayerController()->GetPawn();			//the following will make the character a trigger
 	
 }
 
 
 void UDoorControl::OpenDoor() {
-	//Open the door... need to find the owner first
-	AActor* Owner = GetOwner();
-	//next set the rotation
-	Owner->SetActorRotation(FRotator(0.f, 125.f, 0.f));
-}
+	//Open the door... 
+	//next set the rotation using FRotator.
+	Owner->SetActorRotation(FRotator(0.f, -theAngle, 0.f));
+}//open door
+
+void UDoorControl::CloseDoor() {
+	//Close the door... 
+	//next set the rotation using FRotator to close it again.
+	Owner->SetActorRotation(FRotator(0.f, 0.f, 0.f));
+}//close door
+
 
 
 
@@ -44,9 +50,15 @@ void UDoorControl::TickComponent( float DeltaTime, ELevelTick TickType, FActorCo
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
-	// if the trigger steps into the trigger volume area make something happen..
+	// if the trigger (the player) steps into the trigger volume area make something happen..
 	if (PressurePlate->IsOverlappingActor(TheTrigger)) {
 		OpenDoor();	//call the open door function...
+		lastOpened = GetWorld()->GetTimeSeconds();
+	}//if
+	if(GetWorld()->GetTimeSeconds() - lastOpened > closeDelay){
+		CloseDoor();
 	}
-}
+
+	
+}//tick
 
