@@ -53,10 +53,8 @@ void ABaseCharacter::CheckIsAlive() {
 void ABaseCharacter::PostEditChangeProperty(FPropertyChangedEvent& PropEvent) {
 	isAlive = true;
 	Health = 100;
-	Super::PostEditChangeProperty(PropEvent);
+	Super::PostEditChangeProperty(PropEvent);	//call the property event from the level above this class
 
 	CheckIsAlive();
 }
-
-
 #endif
