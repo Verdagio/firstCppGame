@@ -25,4 +25,21 @@ private:
 	//The distance of the reach (in cm)
 	float Reach = 50.f;
 	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* InputComponent = nullptr;
+
+
+	// ray cast & grab whats in reach
+	void Grabbed();
+	
+	// called when grabbed is released
+	void Released();
+
+	// Find attached components
+	void FindComponents();
+
+	// Hit for first physics body in reach
+	const FHitResult GetFirstBodyReached();
+
+
 };

@@ -3,6 +3,7 @@
 #include "DungeonCrawler.h"
 #include "Grab.h"
 
+#define OUT
 
 // Sets default values for this component's properties
 UGrab::UGrab()
@@ -11,39 +12,102 @@ UGrab::UGrab()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
-}
+}///constructor
 
 
 // Called when the game starts
 void UGrab::BeginPlay()
 {
 	Super::BeginPlay();
+	FindComponents();
 
-	// ...
-	UE_LOG(LogTemp, Warning, TEXT("The Grabber is active!"));
-	
-}
 
+
+}///begin play
 
 // Called every frame
 void UGrab::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
-	// Actor position this tick
 	AActor* Player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
-	FVector LTE = Player->GetActorLocation() + (Player->GetActorRotation().Vector() * Reach);
-	
-	
-	
+	FVector LTE = Player->GetActorLocation() + (Player->GetActorRotation().Vector() * Reach);///line trace end
+	// If the handle is attached
+	if (PhysicsHandle->GrabbedComponent)
+	{
+		PhysicsHandle->SetTargetLocation(LTE);
+	}
+		// move the object being held
 
-	//log the player position and rotation
-	//UE_LOG(LogTemp, Warning, TEXT(" Location: %s	Rotation: %s"), *Player->GetActorLocation().ToString(), *Player->GetActorRotation().ToString());
 
-	//Show the grab line for debugging
+
+
+}///tick component
+
+// Looks for components and verifies that they are attached to the relevant object.
+void UGrab::FindComponents() {
+
+	/// Look for the attached Input component
+	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle) {
+		UE_LOG(LogTemp, Warning, TEXT("physics handle component found"), *GetOwner()->GetName());
+
+	} else {
+		UE_LOG(LogTemp, Error, TEXT("%s missing physics handle"), *GetOwner()->GetName());
+	}///if else if
+
+	/// Look for the attached Input component
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	if (InputComponent) {
+		UE_LOG(LogTemp, Warning, TEXT("Input component found"), *GetOwner()->GetName());
+		///Bind action
+		InputComponent->BindAction("Grab", IE_Pressed, this, &UGrab::Grabbed);
+		InputComponent->BindAction("Grab", IE_Released, this, &UGrab::Released);
+	} else {
+		UE_LOG(LogTemp, Error, TEXT("%s missing input component"), *GetOwner()->GetName());
+	}///if else if
+}
+
+///Find components
+
+ // Used to pick up or grab items using either the E key or right face button on a controller
+void UGrab::Grabbed() {
+	UE_LOG(LogTemp, Warning, TEXT("Grabbed pressed!"));
+	
+	///Line trace and check if reach actors w/ physics body collision channel set
+	auto HitRes = GetFirstBodyReached();
+	auto ObjToGrab = HitRes.GetComponent();
+	auto ActorHit = HitRes.GetActor();
+
+	///if we hit somethinf then attach physics handel
+	if (ActorHit != nullptr){
+		// TODO Release Physics handle
+		PhysicsHandle->GrabComponent(ObjToGrab, NAME_None, ObjToGrab->GetOwner()->GetActorLocation(), true);
+	}
+
+
+}///grabbed method used for picking up items
+
+// called when either the E key or right face button on a controller is released
+void UGrab::Released() {
+	UE_LOG(LogTemp, Warning, TEXT("Grabbed released!"));
+
+	PhysicsHandle->ReleaseComponent();
+}///released function used to release items that have been grabbed#
+
+// Get the player position, ray-cast in front of the player, check for a hit & return FHitResult (The object that was hit)
+const FHitResult UGrab::GetFirstBodyReached() {
+
+
+	// Actor position 
+	AActor* Player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	FVector LTE = Player->GetActorLocation() + (Player->GetActorRotation().Vector() * Reach);///line trace end
+	/*///log the player position and rotation
+	UE_LOG(LogTemp, Warning, TEXT(" Location: %s	Rotation: %s"), *Player->GetActorLocation().ToString(), *Player->GetActorRotation().ToString());
+
+	///Display a debugging line of the reach of our character
 	DrawDebugLine(GetWorld(), Player->GetActorLocation(), LTE, FColor(255, 125, 50), false, 0.f, 0.f, 5.f);
-	/// Query Params
+	/// Query Params*/
 	FCollisionQueryParams TraceParams(FName(TEXT("")), false, GetOwner());
 
 	///Ray cast out to reach distance
@@ -54,6 +118,11 @@ void UGrab::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponent
 	if (ActorHit) {
 		UE_LOG(LogTemp, Warning, TEXT("HIT: %s"), *(ActorHit->GetName()));
 	}
-	
+
+	return Hit;
 }
+
+
+
+
 
