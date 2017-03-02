@@ -23,9 +23,9 @@ public:
 
 private:
 	//The distance of the reach (in cm)
-	float Reach = 50.f;
+	float Reach = 100.f;
 	
-	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UPhysicsHandleComponent* physicsHandle = nullptr;
 	UInputComponent* InputComponent = nullptr;
 
 

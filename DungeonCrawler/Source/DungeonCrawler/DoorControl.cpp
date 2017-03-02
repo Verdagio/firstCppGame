@@ -16,33 +16,33 @@ UDoorControl::UDoorControl()
 
 
 // Called when the game starts
-void UDoorControl::BeginPlay()
-{
+void UDoorControl::BeginPlay(){
 	Super::BeginPlay();
 
 
-	Owner = GetOwner();														//This will set the owner to the door for manipulation
-	TheTrigger = GetWorld()->GetFirstPlayerController()->GetPawn();			//the following will make the character a trigger
+	owner = GetOwner();					//This will set the owner to the door for manipulation
+	if (!pressurePlate) { 
+		UE_LOG(LogTemp, Warning, TEXT("pressure plate missing")); 
+	}//
 	
-}
+}//begin play
 
+float UDoorControl::ActorsOnPlate(){
+	float totMass = 0.f;
+	//find overlapping actors
+	TArray<AActor*> triggers;
 
-void UDoorControl::OpenDoor() {
-	//Open the door... 
-	//next set the rotation using FRotator.
-	Owner->SetActorRotation(FRotator(0.f, -theAngle, 0.f));
-}//open door
+	if (!pressurePlate) { return 0; }/// this will help prevent the game crashing due to nullpointers
 
-void UDoorControl::CloseDoor() {
-	//Close the door... 
-	//next set the rotation using FRotator to close it again.
-	Owner->SetActorRotation(FRotator(0.f, 0.f, 0.f));
-}//close door
+	pressurePlate->GetOverlappingActors(OUT triggers);
+	// iterate through the array
+	for (auto& tmp : triggers) {
+		totMass += tmp->FindComponentByClass<UPrimitiveComponent>()->GetMass();
+		///UE_LOG(LogTemp, Warning, TEXT("%s on the plate"), *tmp->GetName());
+	}
 
-
-
-
-
+	return totMass;
+}//actors on plate
 
 
 // Called every frame
@@ -51,12 +51,11 @@ void UDoorControl::TickComponent( float DeltaTime, ELevelTick TickType, FActorCo
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
 	// if the trigger (the player) steps into the trigger volume area make something happen..
-	if (PressurePlate->IsOverlappingActor(TheTrigger)) {
-		OpenDoor();	//call the open door function...
-		lastOpened = GetWorld()->GetTimeSeconds();
-	}//if
-	if(GetWorld()->GetTimeSeconds() - lastOpened > closeDelay){
-		CloseDoor();
+	if (ActorsOnPlate() > goalMass) {
+		//use the blueprint to open the door for us  
+		onOpen.Broadcast();
+	}else{
+		onClose.Broadcast();
 	}
 
 	

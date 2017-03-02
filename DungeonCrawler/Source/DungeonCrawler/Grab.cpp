@@ -32,10 +32,11 @@ void UGrab::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponent
 
 	AActor* Player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	FVector LTE = Player->GetActorLocation() + (Player->GetActorRotation().Vector() * Reach);///line trace end
+	if (!physicsHandle) { return; }/// this will help prevent the game crashing due to nullpointers
 	// If the handle is attached
-	if (PhysicsHandle->GrabbedComponent)
+	if (physicsHandle->GrabbedComponent)
 	{
-		PhysicsHandle->SetTargetLocation(LTE);
+		physicsHandle->SetTargetLocation(LTE);
 	}
 		// move the object being held
 
@@ -48,8 +49,8 @@ void UGrab::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponent
 void UGrab::FindComponents() {
 
 	/// Look for the attached Input component
-	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
-	if (PhysicsHandle) {
+	physicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (physicsHandle) {
 		UE_LOG(LogTemp, Warning, TEXT("physics handle component found"), *GetOwner()->GetName());
 
 	} else {
@@ -72,17 +73,17 @@ void UGrab::FindComponents() {
 
  // Used to pick up or grab items using either the E key or right face button on a controller
 void UGrab::Grabbed() {
-	UE_LOG(LogTemp, Warning, TEXT("Grabbed pressed!"));
+	//UE_LOG(LogTemp, Warning, TEXT("Grabbed pressed!"));
 	
 	///Line trace and check if reach actors w/ physics body collision channel set
 	auto HitRes = GetFirstBodyReached();
 	auto ObjToGrab = HitRes.GetComponent();
 	auto ActorHit = HitRes.GetActor();
 
+	if (!physicsHandle) { return; }/// this will help prevent the game crashing due to nullpointers
 	///if we hit somethinf then attach physics handel
 	if (ActorHit != nullptr){
-		// TODO Release Physics handle
-		PhysicsHandle->GrabComponent(ObjToGrab, NAME_None, ObjToGrab->GetOwner()->GetActorLocation(), true);
+		physicsHandle->GrabComponentAtLocation(ObjToGrab, NAME_None, ObjToGrab->GetOwner()->GetActorLocation());
 	}
 
 
@@ -92,7 +93,9 @@ void UGrab::Grabbed() {
 void UGrab::Released() {
 	UE_LOG(LogTemp, Warning, TEXT("Grabbed released!"));
 
-	PhysicsHandle->ReleaseComponent();
+	if (!physicsHandle) { return; }//
+
+	physicsHandle->ReleaseComponent();
 }///released function used to release items that have been grabbed#
 
 // Get the player position, ray-cast in front of the player, check for a hit & return FHitResult (The object that was hit)
