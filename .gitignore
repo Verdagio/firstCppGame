@@ -46,6 +46,10 @@ DungeonCrawler/Content/StarterContent/*
 # Audio files
 DungeonCrawler/Content/Audio/*
 
+# Animation Files
+DungeonCrawler/Content/AnimStarterPack/*
+DungeonCrawler/Content/Mannequin/Animations*
+
 # Precompiled Assets
 SourceArt/**/*.png
 SourceArt/**/*.tga
