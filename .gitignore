@@ -71,3 +71,6 @@ DungeonCrawler/Intermediate/*
 
 # Cache files for the editor to use
 DungeonCrawler/DerivedDataCache/*
+
+# Ignore animations
+DungeonCrawler/Content/AnimStarterPack/*
