@@ -36,30 +36,36 @@ C++ scripting is written using Visual Studio which I am already farmilliar with.
 #### About Unreal Engine 4
 
 > The Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal. Although primarily developed for first-person shooters, it has been successfully used in a variety of other genres, including stealth, MMORPGs, and other RPGs. With its code written in C++, the Unreal Engine features a high degree of portability and is a tool used by many game developers today.
+
 > It has been awarded by Guinness World Records as "the most successful video game engine".
 
 For further information about about Unreal Engine see the following:
-![Unreal Homepage](https://www.unrealengine.com/)
-![Unreal Wiki](https://en.wikipedia.org/wiki/Unreal_Engine)
+[Unreal Homepage](https://www.unrealengine.com/)
+[Unreal Wiki](https://en.wikipedia.org/wiki/Unreal_Engine)
 
 #### About C++
 
 > C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation.
+
 > It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights. C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications, including desktop applications, servers, and performance-critical applications. C++ is a compiled language, with implementations of it available on many platforms. Many vendors provide C++ compilers, including the Free Software Foundation, Microsoft, Intel, and IBM.
+
 > C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2014 as ISO/IEC 14882:2014. The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, ISO/IEC 14882:2003, standard. The current C++14 standard supersedes these and C++11, with new features and an enlarged standard library. Before the initial standardization in 1998, C++ was developed by Bjarne Stroustrup at Bell Labs since 1979, as an extension of the C language as he wanted an efficient and flexible language similar to C, which also provided high-level features for program organization. The C++17 standard is due in July 2017, with the draft largely implemented by some compilers already, and C++20 is the next planned standard thereafter.
+
 > Many other programming languages have been influenced by C++, including C#, D, Java, and newer versions of C.
 
 For further information about C++ see the following:
-![cplusplus Website](http://www.cplusplus.com/)
-![C++ Wiki](https://en.wikipedia.org/wiki/C%2B%2B)
+[cplusplus Website](http://www.cplusplus.com/)
+[C++ Wiki](https://en.wikipedia.org/wiki/C%2B%2B)
 
 #### About Visual Studio
 
 > Microsoft Visual Studio is an integrated development environment (IDE) developed by Microsoft. Used to develop computer programs for Microsoft Windows, as well as web sites, web apps, web services, mobile apps, & more. It can produce both native code and managed code.
+
 > Visual Studio includes a code editor supporting IntelliSense as well as code refactoring. The integrated debugger works both as a source-level debugger and a machine-level debugger. Other built-in tools include a code profiler, forms designer for building GUI applications, web designer, class designer, and database schema designer.
+
 > Visual Studio supports different programming languages and allows the code editor and debugger to support numerous programming languages. Built-in languages include C, C++ and C++/CLI, VB.NET, C#, F#, & TypeScript. Support for other languages such as Python, Ruby, Node.js, & M among others is available via language services installed separately. It also supports XML/XSLT, HTML/XHTML, JavaScript and CSS. 
 
 For further information about Visual Studio see the following:
-![Visual Studio homepage](https://www.visualstudio.com/)
-![Visual Studio Wiki](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio)
+[Visual Studio homepage](https://www.visualstudio.com/)
+[Visual Studio Wiki](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio)
 
