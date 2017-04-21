@@ -1,13 +1,15 @@
 # firstCppGame
 3rd year final semester project using cpp &amp; unreal engine 4
 
-# Project Overview
+# Introduction
 ### (i) Project Summary
-In this project, I aim to successfully build a top down dungeon crawler game using Visual Studio to write C++ code, & Unreal Engine 4. A dungeon crawler by definition is  a type of scenario in fantasy role-playing games (RPG’s)  in which a hero navigates a labyrinthine environment or dungeon, battling various monsters, and looting any treasure they may find. By the end of the project I hope to have the environment  procedurally generating, this would save time having to build all environments manually. 
+In this project, I aim to successfully build a top down single player arcade style dungeon crawler game using Visual Studio to write C++ code, & Unreal Engine 4. A dungeon crawler by definition is  a type of scenario in fantasy role-playing games (RPG’s)  in which a hero navigates a labyrinthine environment or dungeon, battling various monsters, and looting any treasure they may find. By the end of the project I hope to have the environment procedurally generating, this would save time having to build all environments manually. 
 
 ### (ii) Expected Problems
 As I have only a basic knowledge of C++ and am completely unfamiliar with the Unreal Engine 4  I expect to have some problems whilst trying to learn how to correctly compose, write, build, & develop using these tools. It will take some time to adjust to how C++ is written and to reserch how to correctly compose a C++ project.
 Adjusting to the unreal engine will take a little bit of time.
+
+Procedural generation of the world is a complex, & large undertaking, which will more than likely require more than 3 months to build. 
 
 ### (iii) Anticipated achievements
 By the end of this project I hope to have a functioning, fun, game. I also hope to have a better understanding of C++, & why it is an industry standard for games development, & finally knowledge of how to develop using an industry standard game engine: Unreal Engine 4.
@@ -29,9 +31,9 @@ In the game, you the user will play as our unnamed hero. You will attempt to nav
 
 ## Technologies used
 
-I decided to use the Unreal Engine 4 (UE4) as my main development environment as it is free, & a powerful tool for building / developing games.
-Also I desired to get an introduction to c++ as it is one of the industry standards for building games, knowing that UE4 uses c++ & its own proprietary scripting languages, I felt this would be the perfect platform to begin learning. 
-C++ scripting is written using Visual Studio which I am already farmilliar with. 
+1. Unreal Engine 4
+2. Visual Studio
+3. C++
 
 #### About Unreal Engine 4
 
@@ -42,6 +44,18 @@ C++ scripting is written using Visual Studio which I am already farmilliar with.
 For further information about about Unreal Engine see the following:
 [Unreal Homepage](https://www.unrealengine.com/)
 [Unreal Wiki](https://en.wikipedia.org/wiki/Unreal_Engine)
+
+#### About Visual Studio
+
+> Microsoft Visual Studio is an integrated development environment (IDE) developed by Microsoft. Used to develop computer programs for Microsoft Windows, as well as web sites, web apps, web services, mobile apps, & more. It can produce both native code and managed code.
+
+> Visual Studio includes a code editor supporting IntelliSense as well as code refactoring. The integrated debugger works both as a source-level debugger and a machine-level debugger. Other built-in tools include a code profiler, forms designer for building GUI applications, web designer, class designer, and database schema designer.
+
+> Visual Studio supports different programming languages and allows the code editor and debugger to support numerous programming languages. Built-in languages include C, C++ and C++/CLI, VB.NET, C#, F#, & TypeScript. Support for other languages such as Python, Ruby, Node.js, & M among others is available via language services installed separately. It also supports XML/XSLT, HTML/XHTML, JavaScript and CSS. 
+
+For further information about Visual Studio see the following:
+[Visual Studio homepage](https://www.visualstudio.com/)
+[Visual Studio Wiki](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio)
 
 #### About C++
 
@@ -57,15 +71,19 @@ For further information about C++ see the following:
 [cplusplus Website](http://www.cplusplus.com/)
 [C++ Wiki](https://en.wikipedia.org/wiki/C%2B%2B)
 
-#### About Visual Studio
+#### Why did I use the above?
 
-> Microsoft Visual Studio is an integrated development environment (IDE) developed by Microsoft. Used to develop computer programs for Microsoft Windows, as well as web sites, web apps, web services, mobile apps, & more. It can produce both native code and managed code.
+I decided to use the Unreal Engine 4 (UE4) as my main development environment as it is free, & a powerful tool for building / developing games.
+I wanted to build a 3d game and learn some c++ while I was at it, while researching engines I came to the conclusion that UE4 would be the best tool for the job.
+With no previous experience or knowledge using UE4, or C++ I knew that development would be a challenge. 
+The reason I wanted to learn C++, is that it is widely used across different studios for development of games, applications, serverside logic, and much more. 
+I felt that it is important that I at the very least learn the fundamentals of the language as it differs to the languages I currently know such as Java, but by applying the theoretical knowledge of what I know about object oriented programming, I would be able to learn the fundamentals fast and with relative ease.. Or so I thought.
 
-> Visual Studio includes a code editor supporting IntelliSense as well as code refactoring. The integrated debugger works both as a source-level debugger and a machine-level debugger. Other built-in tools include a code profiler, forms designer for building GUI applications, web designer, class designer, and database schema designer.
+## Architecture
 
-> Visual Studio supports different programming languages and allows the code editor and debugger to support numerous programming languages. Built-in languages include C, C++ and C++/CLI, VB.NET, C#, F#, & TypeScript. Support for other languages such as Python, Ruby, Node.js, & M among others is available via language services installed separately. It also supports XML/XSLT, HTML/XHTML, JavaScript and CSS. 
 
-For further information about Visual Studio see the following:
-[Visual Studio homepage](https://www.visualstudio.com/)
-[Visual Studio Wiki](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio)
+## Known Bugs
+
+
+## Conclusion
 
