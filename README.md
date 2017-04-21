@@ -25,9 +25,7 @@ In the game, you the user will play as our unnamed hero. You will attempt to nav
 ### (iii) Requirements
     1 The user should be able to control the protagonist (movement, combat, interaction with environment).
     2 An environment in which the user can traverse
-    3 A tutorial on how to play, (eg. movement, combat, interaction with items)
-    4 Roaming enemies
-    5 Puzzles, that incur a learning curve (easy - hard)
+    3 Roaming enemies / enemy AI
 
 ## Technologies used
 
@@ -48,8 +46,6 @@ For further information about about Unreal Engine see the following:
 #### About Visual Studio
 
 > Microsoft Visual Studio is an integrated development environment (IDE) developed by Microsoft. Used to develop computer programs for Microsoft Windows, as well as web sites, web apps, web services, mobile apps, & more. It can produce both native code and managed code.
-
-> Visual Studio includes a code editor supporting IntelliSense as well as code refactoring. The integrated debugger works both as a source-level debugger and a machine-level debugger. Other built-in tools include a code profiler, forms designer for building GUI applications, web designer, class designer, and database schema designer.
 
 > Visual Studio supports different programming languages and allows the code editor and debugger to support numerous programming languages. Built-in languages include C, C++ and C++/CLI, VB.NET, C#, F#, & TypeScript. Support for other languages such as Python, Ruby, Node.js, & M among others is available via language services installed separately. It also supports XML/XSLT, HTML/XHTML, JavaScript and CSS. 
 
@@ -79,11 +75,67 @@ With no previous experience or knowledge using UE4, or C++ I knew that developme
 The reason I wanted to learn C++, is that it is widely used across different studios for development of games, applications, serverside logic, and much more. 
 I felt that it is important that I at the very least learn the fundamentals of the language as it differs to the languages I currently know such as Java, but by applying the theoretical knowledge of what I know about object oriented programming, I would be able to learn the fundamentals fast and with relative ease.. Or so I thought.
 
-## Architecture
+## User Guide
+
+##### Controls
+
+To play you can use either a controller (recommended) or your keyboard and mouse. See the control schema below: 
+Controller:
+![controller](http://imgur.com/qbzjYVV.png)
+
+Keyboard & mouse:
+![keyboardmouse](http://imgur.com/kfFuPPl.png)
+
+##### Rules
+
+The aim of the game is to survive as long as possible & build up a high score. If you come into contact with an enemy you will lose health.
+If your health drops to 0 you will die & be respawned.
+
+## Development methodology
+
+During development I often reffered to the Unreal Documentation for coding standards / procedures. The game was developed with a loosely coupled object oriented design in mind.
+
+For example: Abstraction & inheritance were used when possible, the player & enemy are abstracted from the base character class & also inherit iDamagable. These contain common traits that span across both of these types of Actors (Player & Enemy). 
+
 
 
 ## Known Bugs
 
+1. Minor - door does not recognise player, able to walk through / collision detection not working as expected
+2. Minor - in some cases the player controller does not get disabled after death
 
 ## Conclusion
 
+Before starting the project I wanted to build something that would challenge me, force me out of my comfort zone, & allow me to learn something new.
+I first decided to build the game in UE4, I then began research on both c++ & UE4. I had to understand the fundamentals of c++, how it works, how it differs to what I know already, & best practices when writing c++. I spent roughly 2 weeks researching and prototyping in c++ at the beginning. I then turned my attention to UE4, reading their API’s which for c++ & general usage of the engine, I did this for about 2 weeks before I began my project. At this point I felt pretty comfortable to go ahead.
+What I learned about UE4 is that I wouldn’t have to rely heavily on c++ to do everything for me which was great. Granted I did want to learn the language, but c++ is a very complex language that involves a higher learning curve than usual, outside of the fundamentals I knew nothing about it. In UE4 they have a scripting method called Blueprints, these are essentially graph based algorithms which allow you to do the same as you would in c++ without having to be a master of the language. I quickly learned that automating something in blueprint was faster than c++, the reason being that Epic’s documentation is far better for blueprint than c++.
+Through out the development I ran into very few issues that I could not solve within’ a day or two.. until I began building an algorithm which would procedurally build the world for me. At this point I took a step back began prototyping and researching again, I did this for about 3 weeks and successfully built a simple algorithm in c++ which would build rooms and plot them within’ a defined space. 
+When it came to putting this into Unreal, I ran into bigger issues. It was overly complex trying to draw objects from a c++ script into the world, & unfortunately the documentation was not descriptive enough to be of any use…. So from there I started building an algorithm to do this in blueprint and for the most part there was instant progression. Objects were being drawn to the world with collision boxes, textures, and so on so forth, the only issue is, to draw something in console it was simple, store it in a 2d array and print it to screen… It’s not that simple in UE4.. I spent about 3 weeks going back and forth doing research and testing different ways to procedurally generate the world, until I finally figured that there would be no way I’d be able to write this algorithm, finish all other game mechanics, and do my other projects thats submission dates were drawing closer, so I dropped development on the procedural world building algortihm.
+If I we’re to do anything differently when I next start a project in UE4, I would script more in c++, while I do find the blueprint graph based algorithm useful, it proprietary and to the best of my knowledge is not used in elsewhere, but with that knowledge i can now draw out algorithms to gain further understanding of how they work.
+Overall I feel like this has been more of a learning experience rather than building something that’s ready for market. This game is not ready for market.  
+
+#### Recommendations & References
+
+If I am to continue this project, more research & prototyping of c++ is required:
+
+| Topic | Reference |
+| --- | --- |
+| Unreal API's | [Unreal Documentation](https://docs.unrealengine.com/latest/INT/index.html) |
+| C++ programming | [c++ training](https://www.tutorialspoint.com/cplusplus/) |
+| c++ best practices | [c++ best practices](https://isocpp.org/wiki/faq/coding-standards) |
+
+To be able to procedurally generate interconnected rooms / a world is a bigger task than 2 - 3 months wortk of work.
+
+| Topic | Reference |
+| --- | --- |
+| Procedural generation | [Procedural generation](https://en.wikipedia.org/wiki/Procedural_generation) |
+| Theory of procedural programming | [Procedural theory](https://en.wikipedia.org/wiki/Procedural_programming) |
+
+Deeper knowledge of game development and design is also required:
+
+| Topic | Reference |
+| --- | --- |
+| Game Design | [Game Design Theory & Practice](https://gamifique.files.wordpress.com/2011/11/5-game-design-theory-and-practice.pdf) |
+| Game Development | [Beginning Cpp through game programming](https://tfetimes.com/wp-content/uploads/2015/04/Beginning_Cpp_Through_Game_Programming.pdf) |
+
+Daniel.
