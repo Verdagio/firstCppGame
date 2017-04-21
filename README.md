@@ -1,7 +1,7 @@
 # firstCppGame
 3rd year final semester project using cpp &amp; unreal engine 4
 
-![screencast](https://youtu.be/wlOIpeXlFrY)
+[screencast](https://youtu.be/wlOIpeXlFrY)
 
 # Introduction
 ### (i) Project Summary
