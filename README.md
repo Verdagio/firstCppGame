@@ -1,6 +1,8 @@
 # firstCppGame
 3rd year final semester project using cpp &amp; unreal engine 4
 
+![screencast](<iframe width="560" height="315" src="https://www.youtube.com/embed/wlOIpeXlFrY" frameborder="0" allowfullscreen></iframe>)
+
 # Introduction
 ### (i) Project Summary
 In this project, I aim to successfully build a top down single player arcade style dungeon crawler game using Visual Studio to write C++ code, & Unreal Engine 4. A dungeon crawler by definition is  a type of scenario in fantasy role-playing games (RPG’s)  in which a hero navigates a labyrinthine environment or dungeon, battling various monsters, and looting any treasure they may find. By the end of the project I hope to have the environment procedurally generating, this would save time having to build all environments manually. 
