@@ -107,11 +107,17 @@ For example: Abstraction & inheritance were used when possible, the player & ene
 ## Conclusion
 
 Before starting the project I wanted to build something that would challenge me, force me out of my comfort zone, & allow me to learn something new.
+
 I first decided to build the game in UE4, I then began research on both c++ & UE4. I had to understand the fundamentals of c++, how it works, how it differs to what I know already, & best practices when writing c++. I spent roughly 2 weeks researching and prototyping in c++ at the beginning. I then turned my attention to UE4, reading their API’s which for c++ & general usage of the engine, I did this for about 2 weeks before I began my project. At this point I felt pretty comfortable to go ahead.
+
 What I learned about UE4 is that I wouldn’t have to rely heavily on c++ to do everything for me which was great. Granted I did want to learn the language, but c++ is a very complex language that involves a higher learning curve than usual, outside of the fundamentals I knew nothing about it. In UE4 they have a scripting method called Blueprints, these are essentially graph based algorithms which allow you to do the same as you would in c++ without having to be a master of the language. I quickly learned that automating something in blueprint was faster than c++, the reason being that Epic’s documentation is far better for blueprint than c++.
+
 Through out the development I ran into very few issues that I could not solve within’ a day or two.. until I began building an algorithm which would procedurally build the world for me. At this point I took a step back began prototyping and researching again, I did this for about 3 weeks and successfully built a simple algorithm in c++ which would build rooms and plot them within’ a defined space. 
+
 When it came to putting this into Unreal, I ran into bigger issues. It was overly complex trying to draw objects from a c++ script into the world, & unfortunately the documentation was not descriptive enough to be of any use…. So from there I started building an algorithm to do this in blueprint and for the most part there was instant progression. Objects were being drawn to the world with collision boxes, textures, and so on so forth, the only issue is, to draw something in console it was simple, store it in a 2d array and print it to screen… It’s not that simple in UE4.. I spent about 3 weeks going back and forth doing research and testing different ways to procedurally generate the world, until I finally figured that there would be no way I’d be able to write this algorithm, finish all other game mechanics, and do my other projects thats submission dates were drawing closer, so I dropped development on the procedural world building algortihm.
+
 If I we’re to do anything differently when I next start a project in UE4, I would script more in c++, while I do find the blueprint graph based algorithm useful, it proprietary and to the best of my knowledge is not used in elsewhere, but with that knowledge i can now draw out algorithms to gain further understanding of how they work.
+
 Overall I feel like this has been more of a learning experience rather than building something that’s ready for market. This game is not ready for market.  
 
 #### Recommendations & References
@@ -137,5 +143,6 @@ Deeper knowledge of game development and design is also required:
 | --- | --- |
 | Game Design | [Game Design Theory & Practice](https://gamifique.files.wordpress.com/2011/11/5-game-design-theory-and-practice.pdf) |
 | Game Development | [Beginning Cpp through game programming](https://tfetimes.com/wp-content/uploads/2015/04/Beginning_Cpp_Through_Game_Programming.pdf) |
+
 
 Daniel.
