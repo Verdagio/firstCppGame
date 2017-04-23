@@ -99,10 +99,11 @@ I decided to build the prototype as a console script, this would be fastest way 
 The following is some of the materials I reviewed to gain a better understanding of how I might go about procedural generation.
 
 Reference:
-![Youtube: Live Training: Blueprint generating procedural rooms](https://www.youtube.com/watch?v=mI7eYXMJ5eI&t=3610s)
-![Article](http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/)
-![Youtube: Depth First search maze creation](https://www.youtube.com/watch?v=z7wHZMB9YYs)
-![Github: Cool maze generator](https://github.com/hallca/Maze-Generator/tree/master/EasyBMP)
+
+[Youtube: Live Training: Blueprint generating procedural rooms](https://www.youtube.com/watch?v=mI7eYXMJ5eI&t=3610s)
+[Article](http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/)
+[Youtube: Depth First search maze creation](https://www.youtube.com/watch?v=z7wHZMB9YYs)
+[Github: Cool maze generator](https://github.com/hallca/Maze-Generator/tree/master/EasyBMP)
 
 
 ## User Guide
