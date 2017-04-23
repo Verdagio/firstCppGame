@@ -1,5 +1,5 @@
 # firstCppGame
-3rd year final semester project using cpp &amp; unreal engine 4
+3rd year final semester project using cpp< & unreal engine 4(UE4)
 
 [screencast](https://youtu.be/wlOIpeXlFrY)
 
@@ -77,6 +77,34 @@ With no previous experience or knowledge using UE4, or C++ I knew that developme
 The reason I wanted to learn C++, is that it is widely used across different studios for development of games, applications, serverside logic, and much more. 
 I felt that it is important that I at the very least learn the fundamentals of the language as it differs to the languages I currently know such as Java, but by applying the theoretical knowledge of what I know about object oriented programming, I would be able to learn the fundamentals fast and with relative ease.. Or so I thought.
 
+## Procedural Generation
+
+#### What is procedural generation 
+
+> Procedural generation is a method of creating data algorithmically as opposed to manually. In computer graphics, it is also called random generation and is commonly used to create textures and 3D models. In video games, it is used to automatically create large amounts of content in a game. Advantages of procedural generation include smaller file sizes, larger amounts of content, and randomness for less predictable gameplay.
+[Wiki](https://en.wikipedia.org/wiki/Procedural_generation)
+
+#### Why use procedural generation over manual generation of the world?
+
+I aimed to build the world procedurally in order to give the game endless replayability. When procedurally generating the world, the computer would build, & populate the world for me saving time with level design. Where procedural world generation would build many unique levels, manually building the worlds would allow detailed design of levels where I would be able to fully flesh out puzzles, enemy choke points, or story driven content. As I wasn't going to be making story driven content, & the puzzles were going to be relatively simple procedural would be the preferred choice to generate the world. Also from a technical standpoint it would be more challenging to procedurally build the world which would allow for a greater learning experience.
+
+#### Idea, Research, & Development
+
+In the early stages of the project I hadn't though of procedural generation. The idea was put forward by my project supervisor, I thought about it for a few days doing some light reading about the topic and agreed, that would be the direction I would take this project. 
+
+I began researching how procedural generation is typically done, during this time I consumed a lot of information which showed a lot of different approaches that could be taken to carry out the task at hand. It was at this point that I knew that what lay ahead of me would be the most technical & complex problem I have taken to date. I began drafting ideas, trying to put into english what the logic should do, how it should do it, & why... The research phase took about 2 weeks, as there was a time constraint on the project, I needed to start prototyping. 
+
+I decided to build the prototype as a console script, this would be fastest way to get proof of concept. The scripting took about 2 weeks generating a small map with a defined number of rooms within it. I had gotten to a point with the prototype where I was happy to start putting it into practice in UE4. I ran into a lot of issues trying to script it in a cpp file so decided to utilize the blueprint scritping. The blueprint scripts made drawing to the world a lot more straight forward. The documentation for c++ was not substantial enough to easily find how this could be done, whereas the blueprint docs were thorough. The Development was off to a rocky start when I began in UE4 the algorithm which I had previously used was not working as expected a different approach was needed. After a few different Development was going well until the complexity began to grow exponentially. The complexity of constanly dividing the 'rooms' in 2 became a heavier processes with every iteration of the algorithm to the point where the engine would hang & crash. With project submission dates getting closer I decided that I would not be able to finish the algorithm, complete all other game mechanics, & other active projects in time, development of the algorithm stopped. 
+
+The following is some of the materials I reviewed to gain a better understanding of how I might go about procedural generation.
+
+Reference:
+![Youtube: Live Training: Blueprint generating procedural rooms](https://www.youtube.com/watch?v=mI7eYXMJ5eI&t=3610s)
+![Article](http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/)
+![Youtube: Depth First search maze creation](https://www.youtube.com/watch?v=z7wHZMB9YYs)
+![Github: Cool maze generator](https://github.com/hallca/Maze-Generator/tree/master/EasyBMP)
+
+
 ## User Guide
 
 ##### Controls
@@ -132,7 +160,7 @@ If I am to continue this project, more research & prototyping of c++ is required
 | C++ programming | [c++ training](https://www.tutorialspoint.com/cplusplus/) |
 | c++ best practices | [c++ best practices](https://isocpp.org/wiki/faq/coding-standards) |
 
-To be able to procedurally generate interconnected rooms / a world is a bigger task than 2 - 3 months wortk of work.
+To be able to procedurally generate interconnected rooms / a world is a bigger task than 2 - 3 months worth of work. Further research is required.
 
 | Topic | Reference |
 | --- | --- |
